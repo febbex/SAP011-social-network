@@ -1,12 +1,27 @@
-// Este es el punto de entrada de tu aplicacion
+import login from "./lib/Login/login.js";
+import cadastro from "./lib/cadastro/cadastro.js";
 
-//import { myFunction } from './lib/index.js';
+const main = document.querySelector("#app");
 
-//myFunction();
+const init = () => {
+    window.addEventListener("hashchange", () => {
+        main.innerHTML = "";
+        switch (window.location.hash) {      
+            case "#login":
+                main.appendChild(login());
+                break;
+            case "#cadastro":
+                main.appendChild(cadastro());
+                break;
+                default:
+                    login();
 
-function imprimeIdade(idade) {
-
-    console.log(`Vc tem ${idade} anos`);
-
+        }
+    })
 }
-imprimeIdade(12);
+
+window.addEventListener("load", () => {
+    main.appendChild(login());
+    init(); //chama a função para funcionar
+
+})
