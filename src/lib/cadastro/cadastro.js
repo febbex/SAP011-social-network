@@ -1,5 +1,5 @@
 export default () => {
-    const cadastro = document.createElement('div');
+    const container = document.createElement('div');
   
       const template = `
   <section id="cadastro">
@@ -29,8 +29,8 @@ export default () => {
   </form>
   </section>`;
   
-  cadastro.innerHTML = template;
+  container.innerHTML = template;
   
-  return cadastro;
+  return container;
   }
   

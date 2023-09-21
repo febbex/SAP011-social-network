@@ -1,15 +1,13 @@
 export default () => {
-  const login = document.createElement('div');
+  const container = document.createElement('div');
 
     const template = `
 <section id="login">
 <img src="./assets/logo_mytrip.png" alt="logo">
 
 <h1>My Trip</h1>
+<section id="form-container">
 <form action="" method="post">
-<fieldset>
-  <legend>Login</legend>
-
   <label for="user">E-mail</label>
   <input type="text" id="user" required autofocus>
 
@@ -17,19 +15,23 @@ export default () => {
   <input type="password" id="pass" required>
 
   <input type="submit" value="Login">
+  </section>
 
-  <div id="novaConta"
-      <p class="criarConta"> Não tem conta? </p> 
-      <a id="botaoCadastro" href="#cadastro">Cadastrar</a>
- </div>
+  <section id="contaGoogle"
+  <p>ou fazer login com</p>
+  <img src="./assets/icon_google.png" alt="icon_google">
+  </section>
 
-</fieldset>
-
+<section id="novaConta"
+<p class="criarConta"> Não possui conta? </p> 
+<a id="botaoCadastro" href="#cadastro">Criar conta agora</a>
+</section>
 </form>
+
 </section>`;
 
-login.innerHTML = template;
+container.innerHTML = template;
 
-return login;
+return container;
 
 }
