@@ -1,55 +1,20 @@
 @import url(https://db.onlinewebfonts.com/c/629a55a7e793da068dc580d184cc0e31?family=Open+Sans);
 
-/*resetando a página*/
-* {
+*
+{
     margin: 0;
     padding: 0;
+    font-family: "Open sans";
     box-sizing: border-box;
-    
+}
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
   }
 
-  /*corpo das páginas*/
-#app {
-  display: flex;
-  flex-direction: column;
-  /*corpo das páginas em coluna*/
-  min-height: 100vh;
-  font-family: "Open Sans";
-}
-#login{
-  width: flex;
-  flex-direction: column;
-  display: grid;
-  text-align: center;
-
-}
-#contaGoogle img{
-    width: 4rem;
-  
-}
-#login img{
-  width:14rem ;
-
-
-}
-
-
-@media(max-width:450px){
-
-  #login{
-    width: flex;
-    flex-direction: column;
-    display: grid;
-    text-align: center;
-
-}
-#login img{
-
-}
-
-#contaGoogle img{
-  width: 15vw;
-
-}
-
-}
+  #contaGoogle img{
+    width: 20vw;
+  }
