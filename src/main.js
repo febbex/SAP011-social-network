@@ -1,4 +1,4 @@
-import login from "./lib/Login/login.js";
+import login from "./lib/login/login.js";
 import cadastro from "./lib/cadastro/cadastro.js";
 
 const main = document.querySelector("#app");
