@@ -7,14 +7,63 @@
     font-family: "Open sans";
     box-sizing: border-box;
 }
-body
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-  }
+h1{
+  margin: 1rem;
+}
 
-  #contaGoogle img{
-    width: 20vw;
+p{
+  margin: 1rem;
+}
+#container{
+  display: grid;
+  text-align: center;
+  align-items:center;
+  justify-content:center;
+  color: #1E284C;
+
+  }
+  .input-field{
+    border: none;
+    width: 460px;
+    background-color: transparent;
+    font-size: 18px;
+    padding: 0px 5px;
+    border-bottom: 1px solid #D7D7D7; 
+} 
+
+.input-field:focus{
+  display: inline;
+  margin: 0;
+  padding: 0
+ 
+}
+#formLogin{
+  text-align: center;
+}
+
+.logoMyTrip {
+  width: 252px;
+  height: 252px;
+  margin: auto;
+  display: block;
+
+} 
+   #contaGoogle img{
+    width: 54px;
+    height: 54px;
+    
+ 
+   }
+  #submit{
+    background-color: #C892E6;
+    border-radius: 30px;
+    border-style: none;
+    width: 112px;
+    height: 42px;
+    color: #ffffff;
+   
+  }
+  #botaoCadastro{
+    color: #77CC66;
+    
   }

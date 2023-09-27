@@ -1,10 +1,8 @@
 export default () => {
-    const container = document.createElement('div');
-  
-      const template = `
+  const container = document.createElement('div');
+  const template = `
   <section id="cadastro">
   <img src="./assets/logo_mytrip.png" alt="logo">
-
   <h1>My Trip</h1>
   <form action="" method="post">
   <fieldset>
@@ -27,10 +25,7 @@ export default () => {
   </fieldset>
   
   </form>
-  </section>`;
-  
-  container.innerHTML = template;
-  
-  return container;
-  }
-  
+  </section>`;  
+container.innerHTML = template;  
+return container;
+}

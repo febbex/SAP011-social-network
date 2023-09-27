@@ -1,27 +1,30 @@
-import {signInGoogle} from "../../services/firebaseLogin.js"
+import { signInGoogle } from '../../services/firebaseLogin.js';
+
 export default () => {
   const container = document.createElement('div');
 
   const template = `
-<section id="login">
-<img src="./assets/logo_mytrip.png" alt="logo">
+<section id="container">
+
+<img class="logoMyTrip" src="./assets/logo_mytrip.png" alt="logo">
 
 <h1>My Trip</h1>
-<section id="form-container">
+
+<section id="formLogin">
 <form action="" method="post">
-  <label for="user">E-mail</label>
-  <input type="text" id="loginUser" class="loginUser" required autofocus>
+<label for="user">E-mail</label>
+<input type="text" id="loginUser" class="input-field" required autofocus></p>
 
-  <label for="pass">Senha</label>
-  <input type="password" id="senhaUser" class ="senhaUser" required>
+<p><label for="pass">Senha</label>
+<input type="password" id="senhaUser" class ="input-field" required></p>
 
-  <input type="submit" value="Login">
-  </section>
-  
-  <p>ou fazer login com</p>
-  <button id="contaGoogle">
-  <img src="./assets/icon_google.png" alt="icon_google">
-  </button>
+<p><input id="submit" type="submit" value="Login"></p>
+</section>
+
+<p>ou fazer login com</p>
+<a id="contaGoogle">
+<img src="./assets/icon_google.png" alt="icon_google">
+</a>
 
 <section id="novaConta">
 <p class="criarConta"> Não possui conta? </p> 
@@ -34,18 +37,15 @@ export default () => {
   async function loginGoogle(event) {
     event.preventDefault();
 
-    await signInGoogle ();
-    location.hash = "#cadastro";
-  }
-  /*
-  const loginGoogle = document.getElementById("contaGoogle");
-  loginGoogle.addEventListener("click", signInGoogle);*/
+    await signInGoogle();
+  location.hash = "#cadastro";
+}
 
-  document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
     
-    if (btnLoginGoogle) {
+  if (btnLoginGoogle) {
 
-    }
+ }
   });
 
   container.innerHTML = template;
