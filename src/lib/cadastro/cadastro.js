@@ -5,27 +5,26 @@ export default () => {
   <img src="./assets/logo_mytrip.png" alt="logo">
   <h1>My Trip</h1>
   <form action="" method="post">
-  <fieldset>
-    <legend>Login</legend>
+  <legend>Login</legend>
   
-    <label for="user">Nome</label>
-    <input type="text" id="user" required autofocus>
+  <label for="user">Nome</label>
+  <input type="text" id="user" required autofocus>
   
-    <label for="pass">Username</label>
-    <input type="password" id="pass" required>
+  <label for="pass">Username</label>
+  <input type="password" id="pass" required>
 
-    <label for="pass">Senha</label>
-    <input type="password" id="pass" required>
+  <label for="pass">Senha</label>
+  <input type="password" id="pass" required>
 
-    <label for="pass">Confirmar Senha</label>
-    <input type="password" id="pass" required>
-  
-    <input type="submit" value="Cadastrar">
-  
-  </fieldset>
-  
+  <label for="pass">Confirmar Senha</label>
+  <input type="password" id="pass" required>
+    
+  <section id="loginCadastro">
+  <a id="btnLoginCadastro" href="#feed">Cadastrar</a>
+  </section>
+
   </form>
-  </section>`;  
-container.innerHTML = template;  
-return container;
+  </section>`;
+  container.innerHTML = template;
+  return container;
 }

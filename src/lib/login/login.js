@@ -38,7 +38,7 @@ export default () => {
     event.preventDefault();
 
     await signInGoogle();
-  location.hash = "#cadastro";
+  location.hash = "#feed";
 }
 
 document.addEventListener("DOMContentLoaded", function() {
