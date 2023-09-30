@@ -1,4 +1,4 @@
-import { signInGoogle } from '../../services/firebaseLogin.js';
+import { signInGoogle, signIn, checkLogin } from '../../services/firebaseLogin.js';
 
 export default () => {
   const container = document.createElement('div');
@@ -12,12 +12,10 @@ export default () => {
 
 <section id="formLogin">
 <form action="" method="post">
-<label for="user">E-mail</label>
-<input type="text" id="loginUser" class="input-field" required autofocus></p>
-
+<p><label for="user">E-mail</label>
+<input type="text" id="loginUser"class="input-field" required autofocus></p>
 <p><label for="pass">Senha</label>
 <input type="password" id="senhaUser" class ="input-field" required></p>
-
 <p><input id="submit" type="submit" value="Login"></p>
 </section>
 
@@ -34,25 +32,43 @@ export default () => {
 
 </section>`;
 
+  const loginUser = container.querySelector("#loginUser");
+  const senhaUser = container.querySelector("#senhaUser");
+
+  async function login(event) {
+    event.preventDefault();
+
+    const emailUser = loginUser.value;
+    const passwordUser = senhaUser.value;
+
+    await signIn(emailUser, passwordUser);
+    if (checkLogin === true) {
+      location.hash = "feed";
+
+    }
+  }
   async function loginGoogle(event) {
     event.preventDefault();
 
     await signInGoogle();
-  location.hash = "#feed";
-}
+    location.hash = "#feed";
+  }
 
-document.addEventListener("DOMContentLoaded", function() {
-    
-  if (btnLoginGoogle) {
+  document.addEventListener("DOMContentLoaded", function () {
 
- }
+    if (btnLoginGoogle) {
+
+    }
   });
 
   container.innerHTML = template;
+  const btnLogin = container.querySelector("#submit");
+  btnLogin.addEventListener("click", login);
+
   const btnLoginGoogle = container.querySelector("#contaGoogle");
   btnLoginGoogle.addEventListener("click", loginGoogle);
 
   return container;
-
-
 }
+
+
