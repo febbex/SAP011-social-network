@@ -34,8 +34,9 @@ p{
 .input-field:focus{
   display: inline;
   margin: 0;
-  padding: 0
- 
+  padding: 0;
+  outline:none;/*tira borda ao clicar*/
+
 }
 #formLogin{
   text-align: center;
@@ -65,5 +66,10 @@ p{
   }
   #botaoCadastro{
     color: #77CC66;
-    
+    text-decoration: none;
+  }
+
+  .main{
+    max-width: 900px;
+    margin: 0 auto;
   }
