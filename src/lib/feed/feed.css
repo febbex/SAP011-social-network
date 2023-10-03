@@ -15,15 +15,23 @@ header {
     box-shadow: 1px 0 3px rgba(0, 0, 0, 4);
 }
 
-.userHeader img {
-    width: 44px;
-    height: 44px;
+#btnPerfil {
+    /*tirar opção de ampliar caixa de texto*/
+    outline: none;
+    /*tira borda ao clicar*/
+    border: 0;
     float: right;
+    background: #C892E6;
     margin: 3px;
     padding: 5px;
+    cursor: pointer;
 
 }
-
+#btnPerfil img {
+    display: block;
+    width: 34px;
+    height: 34px;
+}
 #publicar {
     background-color: #C892E6;
     border-radius: 30px;

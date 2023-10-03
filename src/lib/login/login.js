@@ -45,7 +45,7 @@ export default () => {
     const passwordUser = senhaUser.value;
 
     await signIn(emailUser, passwordUser);
-    window.location.hash = 'feed';
+    
   }
   const btnLogin = container.querySelector('#submit');
   btnLogin.addEventListener('click', login);

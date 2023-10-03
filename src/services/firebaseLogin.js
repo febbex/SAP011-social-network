@@ -17,8 +17,7 @@ async function signInGoogle() {
   await signInWithPopup(auth(), provider)
     .then((result) => {
       const credential = GoogleAuthProvider.credentialFromResult(result);
-      const token = credential.accessToken;
-      const user = result.user;//
+      window.location.hash = '#feed';
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -51,11 +50,23 @@ async function signIn(email, password) {
   await signInWithEmailAndPassword(auth(), email, password)
     .then((userCredential) => {
       const user = userCredential.user;
-      // ...
+      window.location.hash = 'feed';
     })
     .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
+      alert(getErrorMessage(error));
     });
+  }
+    function getErrorMessage(error){
+      if(error.code == 'auth/invalid-login-credentials'){
+        return 'Usuário não encontratdo';
+      }
+      if(error.code == 'auth/missing-password'){
+        return 'Insira sua senha';
+      }
+    if(error.code == 'auth/invalid-email'){
+      return 'Insira um email válido';
+    }
+      return error.message;
+    
 }
 export { signInGoogle, sair, signIn };

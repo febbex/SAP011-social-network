@@ -5,8 +5,9 @@ export default () => {
   const template = `
     <section id="feed">
     <header>
-    <a class=userHeader>
-    <img src="./assets/user-branco.png" alt="icon_sair"></a>
+
+    <button id=btnPerfil>
+    <img src="./assets/user-branco.png" alt="icon_perfil"></button>
     <button id="btnSair">
     <img src="./assets/icon_sair.png" alt="icon_sair">
     </button>
