@@ -4,21 +4,21 @@ import {
   GoogleAuthProvider,
   signOut,
   signInWithEmailAndPassword,
-} from "firebase/auth";
+} from 'firebase/auth';
 
-import { app } from "./firebaseConfig.js";
+import { app } from './firebaseConfig.js';
 
 const auth = () => getAuth(app);
 
 const provider = new GoogleAuthProvider();
 
-//função para logar com o google
- async function signInGoogle() {
+// função para logar com o google //
+async function signInGoogle() {
   await signInWithPopup(auth(), provider)
     .then((result) => {
       const credential = GoogleAuthProvider.credentialFromResult(result);
       const token = credential.accessToken;
-      const user = result.user;
+      const user = result.user;//
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -26,7 +26,7 @@ const provider = new GoogleAuthProvider();
       const credential = GoogleAuthProvider.credentialFromError(error);
     });
 }
-//função para sair e voltar a pág Login
+ // função para sair e voltar a pág Login //
 async function sair() {
   await signOut(auth())
     .then(() => {
@@ -35,9 +35,9 @@ async function sair() {
     .catch((error) => {
       // An error happened.
     });
-  location.hash = "#login";
+  window.location.hash = '#login';
 }
-function checkLogin() {
+/* function checkLogin() {
   onAuthStateChanged(auth(), (user) => {
     if (user) {
       console.log("usuário logado");
@@ -46,7 +46,7 @@ function checkLogin() {
       location.hash = "#login";
     }
   });
-}
+} */
 async function signIn(email, password) {
   await signInWithEmailAndPassword(auth(), email, password)
     .then((userCredential) => {
@@ -57,11 +57,5 @@ async function signIn(email, password) {
       const errorCode = error.code;
       const errorMessage = error.message;
     });
-
-  
 }
-
-
-
-
-export { signInGoogle, sair, signIn, checkLogin, };
+export { signInGoogle, sair, signIn };

@@ -1,4 +1,4 @@
-import { sair } from "../../services/firebaseLogin.js";
+import { sair } from '../../services/firebaseLogin.js';
 
 export default () => {
   const container = document.createElement('div');
@@ -99,21 +99,13 @@ export default () => {
             </div>
     </li>
 </ul>
-
     </main>
-
-  
-
-    </form>
-    </section>`;
-
-
+ </form>
+</section>`;
   container.innerHTML = template;
 
-  const btnSair = container.querySelector("#btnSair");
-  btnSair.addEventListener("click", sair);//chama a função sair, ao clicar no btn sair
+  const btnSair = container.querySelector('#btnSair');
+  btnSair.addEventListener('click', sair); // chama a função sair, ao clicar no btn sair //
 
   return container;
-}
-
-
+};

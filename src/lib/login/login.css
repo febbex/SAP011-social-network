@@ -52,18 +52,28 @@ p{
    #contaGoogle img{
     width: 54px;
     height: 54px;
-    
+   
  
    }
-  #submit{
+   #contaGoogle{
+    outline: none;
+    background: #ffffff;
+    border: #ffffff;
+   }
+  #submit {
     background-color: #C892E6;
     border-radius: 30px;
     border-style: none;
-    width: 112px;
-    height: 42px;
+    width:112px;
+    height:42px;
     color: #ffffff;
-   
-  }
+    transition: background 0.2s;
+    cursor: pointer;
+}
+
+#submit:hover{
+    background: #A77ABF;
+}
   #botaoCadastro{
     color: #77CC66;
     text-decoration: none;

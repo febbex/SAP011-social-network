@@ -1,4 +1,4 @@
-import { signInGoogle, signIn, checkLogin } from '../../services/firebaseLogin.js';
+import { signInGoogle, signIn } from '../../services/firebaseLogin.js';
 
 export default () => {
   const container = document.createElement('div');
@@ -12,17 +12,18 @@ export default () => {
 
 <section id="formLogin">
 <form action="" method="post">
-<p><label for="user">E-mail</label>
-<input type="text" id="loginUser"class="input-field" required autofocus></p>
-<p><label for="pass">Senha</label>
-<input type="password" id="senhaUser" class ="input-field" required></p>
-<p><input id="submit" type="submit" value="Login"></p>
+<p><label for="loginUser">E-mail</label>
+<input type="email" id="loginUser"class="input-field" placeholder="email@example.com" required autofocus></p>
+<p><label for="senhaUser">Senha</label>
+<input type="password" id="senhaUser" class ="input-field" placeholder="*****" required></p>
+
+<button id="submit" type="submit">Login</button>
 </section>
 
 <p>ou fazer login com</p>
-<a id="contaGoogle">
+<button id="contaGoogle">
 <img src="./assets/icon_google.png" alt="icon_google">
-</a>
+</button>
 
 <section id="novaConta">
 <p class="criarConta"> Não possui conta? </p> 
@@ -31,10 +32,12 @@ export default () => {
 </form>
 
 </section>`;
+  container.innerHTML = template;
 
-  const loginUser = container.querySelector("#loginUser");
-  const senhaUser = container.querySelector("#senhaUser");
+  const loginUser = container.querySelector('#loginUser');
+  const senhaUser = container.querySelector('#senhaUser');
 
+  // função para Login do usuário //
   async function login(event) {
     event.preventDefault();
 
@@ -42,33 +45,27 @@ export default () => {
     const passwordUser = senhaUser.value;
 
     await signIn(emailUser, passwordUser);
-    if (checkLogin === true) {
-      location.hash = "feed";
-
-    }
+    window.location.hash = 'feed';
   }
+  const btnLogin = container.querySelector('#submit');
+  btnLogin.addEventListener('click', login);
+
+  // função para logar com o google //
   async function loginGoogle(event) {
     event.preventDefault();
 
     await signInGoogle();
-    location.hash = "#feed";
+    window.location.hash = '#feed';
   }
 
-  document.addEventListener("DOMContentLoaded", function () {
+  const btnLoginGoogle = container.querySelector('#contaGoogle');
 
+  document.addEventListener('DOMContentLoaded', function () {
     if (btnLoginGoogle) {
-
     }
   });
 
-  container.innerHTML = template;
-  const btnLogin = container.querySelector("#submit");
-  btnLogin.addEventListener("click", login);
-
-  const btnLoginGoogle = container.querySelector("#contaGoogle");
-  btnLoginGoogle.addEventListener("click", loginGoogle);
+  btnLoginGoogle.addEventListener('click', loginGoogle);
 
   return container;
 }
-
-
