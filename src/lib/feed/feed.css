@@ -22,15 +22,16 @@ header {
     border: 0;
     float: right;
     background: #C892E6;
-    margin: 3px;
-    padding: 5px;
+    color: #ffffff;
+    font-size: 12px;
+    margin: 3px 3px;
     cursor: pointer;
 
 }
 #btnPerfil img {
     display: block;
-    width: 34px;
-    height: 34px;
+    width: 30px;
+    height: 30px;
 }
 #publicar {
     background-color: #C892E6;

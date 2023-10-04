@@ -55,7 +55,6 @@ export default () => {
     event.preventDefault();
 
     await signInGoogle();
-    window.location.hash = '#feed';
   }
 
   const btnLoginGoogle = container.querySelector('#contaGoogle');

@@ -1,5 +1,4 @@
 import { sair } from '../../services/firebaseLogin.js';
-
 export default () => {
   const container = document.createElement('div');
   const template = `
@@ -7,10 +6,11 @@ export default () => {
     <header>
 
     <button id=btnPerfil>
-    <img src="./assets/user-branco.png" alt="icon_perfil"></button>
+    <img src="./assets/user-branco.png" alt="icon_perfil">Perfil</button>
     <button id="btnSair">
     <img src="./assets/icon_sair.png" alt="icon_sair">
     </button>
+
     </header>
     
     
@@ -18,7 +18,7 @@ export default () => {
     <div class="newPost">
     <div class="infoUser">
     <div class="imgUser"></div>
-    <strong>Thamires Febbo</strong>
+    <strong>Usuário teste</strong>
     </div>
 
     <form action="" class="formPost">
@@ -37,7 +37,7 @@ export default () => {
         <div class="infoUserPost">
             <div class="imgUserPost"></div>
                     <strong class="name">
-                        Thamires Febbo
+                        Usuário teste
                     </strong>
                 </div>
         </div>
@@ -59,7 +59,7 @@ export default () => {
            <div class="infoUserPost">
             <div class="imgUserPost"></div>
                     <strong class="name">
-                        Thamires Febbo
+                    Usuário teste
                     </strong>
                 </div>
         </div>
@@ -82,7 +82,7 @@ export default () => {
         <div class="infoUserPost">
             <div class="imgUserPost"></div>
             <strong class="name">
-            Thamires Febbo
+            Usuário teste
         </strong>
         </div>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
