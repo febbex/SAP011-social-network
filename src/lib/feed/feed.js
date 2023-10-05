@@ -55,50 +55,7 @@ export default () => {
                 </button>
             </div>
     </li>
-    <li class="post">
-           <div class="infoUserPost">
-            <div class="imgUserPost"></div>
-                    <strong class="name">
-                    Usuário teste
-                    </strong>
-                </div>
-        </div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua.
-            Quis ipsum suspendisse ultrices gravida.
-            Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
-
-        <div class="actionBtnPost">
-                <button class="btnPost">
-                    <img src="./assets/icon_curtida2.svg" alt="curtir">
-                </button>
-                <button class="btnPost">
-                    <img src="./assets/icon_edt2.svg" alt="editar">
-                </button>
-            </div>
-    </li>
-
-    <li class="post">
-        <div class="infoUserPost">
-            <div class="imgUserPost"></div>
-            <strong class="name">
-            Usuário teste
-        </strong>
-        </div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua.
-            Quis ipsum suspendisse ultrices gravida.
-            Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
-
-        <div class="actionBtnPost">
-                <button class="btnPost">
-                    <img src="./assets/icon_curtida2.svg" alt="curtir">
-                </button>
-                <button class="btnPost">
-                    <img src="./assets/icon_edt2.svg" alt="editar">
-                </button>
-            </div>
-    </li>
+ 
 </ul>
     </main>
  </form>

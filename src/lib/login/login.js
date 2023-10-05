@@ -46,6 +46,7 @@ export default () => {
 
     await signIn(emailUser, passwordUser);
     
+    
   }
   const btnLogin = container.querySelector('#submit');
   btnLogin.addEventListener('click', login);
