@@ -46,6 +46,16 @@ async function sair() {
     }
   });
 } */
+function perfil(){
+  onAuthStateChanged(auth(), (user) => {
+      if (user) {
+        console.log("usuário logado");
+        return true;
+      } else {
+        location.hash = "#perfil";
+      }
+    });
+  }
 async function signIn(email, password) {
   await signInWithEmailAndPassword(auth(), email, password)
     .then((userCredential) => {
@@ -69,4 +79,4 @@ async function signIn(email, password) {
       return error.message;
     
 }
-export { signInGoogle, sair, signIn };
+export { signInGoogle, sair, signIn, perfil };
