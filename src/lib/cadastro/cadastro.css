@@ -1,0 +1,65 @@
+@import url(https://db.onlinewebfonts.com/c/629a55a7e793da068dc580d184cc0e31?family=Open+Sans);
+
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: "Open sans";
+    box-sizing: border-box;
+}
+
+section#container-cadastro {
+    display: grid;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin-top: 5vw;
+}
+
+section#container-cadastro h1{
+    font-size: 25px;
+    color:#1E1E1E
+}
+#imgCadastro {
+    width: 136px;
+    height: 195px;
+    margin:auto;
+    display: block;
+}
+
+input {
+    border: none;
+    border-bottom: 1px solid #1E1E1E; /* Adicione uma linha sublinhada */
+    color: #1E1E1E;
+    padding: 7px; 
+    outline: none; /* Remove o contorno ao focar no input */
+    width: 220px;
+}
+
+input::placeholder {
+    color: #1E1E1E;
+    text-align: left;
+    font-size: 16px;
+}
+
+#btnCadastrar {
+    background-color: #C892E6;
+    border-radius: 30px;
+    border-style: none;
+    text-decoration: none;
+    width:112px;
+    height:42px;
+    color: #ffffff;
+    transition: background 0.2s;
+    cursor: pointer;
+} 
+
+#btnCadastrar:hover {
+    background: #A77ABF;
+}
+#acessarConta {
+    color: #77CC66;
+    text-decoration: none;
+}
+

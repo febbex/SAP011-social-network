@@ -12,10 +12,10 @@ export default () => {
 
 <section id="formLogin">
 <form action="" method="post">
-<p><label for="loginUser">E-mail</label>
-<input type="email" id="loginUser"class="input-field" placeholder="email@example.com" required autofocus></p>
-<p><label for="senhaUser">Senha</label>
-<input type="password" id="senhaUser" class ="input-field" placeholder="*****" required></p>
+<label for="loginUser"></label>
+<input type="email" id="loginUser"class="input-field" placeholder="E-mail" required autofocus>
+<p><label for="senhaUser"></label>
+<input type="password" id="senhaUser" class ="input-field" placeholder="Senha" required></p>
 
 <button id="submit" type="submit">Login</button>
 </section>
