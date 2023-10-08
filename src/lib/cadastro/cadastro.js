@@ -25,9 +25,7 @@ export default () => {
   <p><label for="confirmPassword"></label>
   <input type="password" id="confirmPassword" placeholder="Confirme sua senha" required></p>
     
-  <section id="loginCadastro">
-  <a id="btnCadastrar" href="#feed">Cadastrar</a>
-  </section>
+  <button type=submit id="btnCadastrar">Cadastrar</button>
 
   <p>Já possui uma conta?</p>
   <a id="acessarConta" href="#login">Acessar sua conta agora</a>
@@ -37,3 +35,4 @@ export default () => {
   container.innerHTML = template;
   return container;
 }
+//fazer as funções de cadastro aqui

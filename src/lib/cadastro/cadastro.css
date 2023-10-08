@@ -30,7 +30,7 @@ section#container-cadastro h1{
 
 input {
     border: none;
-    border-bottom: 1px solid #1E1E1E; /* Adicione uma linha sublinhada */
+    border-bottom: 1px solid #1E1E1E; /* Adiciona uma linha sublinhada */
     color: #1E1E1E;
     padding: 7px; 
     outline: none; /* Remove o contorno ao focar no input */
