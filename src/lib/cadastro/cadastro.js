@@ -25,9 +25,7 @@ export default () => {
   <p><label for="confirmPassword"></label>
   <input type="password" id="confirmPassword" placeholder="Confirme sua senha" required></p>
     
-  <section id="loginCadastro">
-  <a id="btnCadastrar" href="#feed">Cadastrar</a>
-  </section>
+  <button type=submit id="btnCadastrar">Cadastrar</button>
 
   <p>Já possui uma conta?</p>
   <a id="acessarConta" href="#login">Acessar sua conta agora</a>
@@ -35,5 +33,23 @@ export default () => {
   </form>
   </section>`;
   container.innerHTML = template;
+
+  const email = container.querySelector('#email');
+  const password = container.querySelector('#password');
+
+  async function cadastro (event) {
+    event.preventDefault();
+
+    const userEmail = email.value;
+    const userPassword = password.value;
+    
+    await register(userEmail, userPassword);
+  }
+
+  const btnCadastrar = container.querySelector('#btnCadastrar');
+  btnCadastrar.addEventListener('click', cadastro);
+ 
+
   return container;
 }
+
