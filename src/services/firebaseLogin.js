@@ -36,26 +36,17 @@ async function sair() {
     });
   window.location.hash = '#login';
 }
-/* function checkLogin() {
+function checkLogin() {
   onAuthStateChanged(auth(), (user) => {
     if (user) {
+    // window.location.hash = "#feed";
       console.log("usuário logado");
       return true;
     } else {
       location.hash = "#login";
     }
   });
-} */
-function perfil(){
-  onAuthStateChanged(auth(), (user) => {
-      if (user) {
-        console.log("usuário logado");
-        return true;
-      } else {
-        location.hash = "#perfil";
-      }
-    });
-  }
+}
 async function signIn(email, password) {
   await signInWithEmailAndPassword(auth(), email, password)
     .then((userCredential) => {
@@ -68,7 +59,7 @@ async function signIn(email, password) {
   }
     function getErrorMessage(error){
       if(error.code == 'auth/invalid-login-credentials'){
-        return 'Usuário não encontratdo';
+        return 'Usuário não encontrado';
       }
       if(error.code == 'auth/missing-password'){
         return 'Insira sua senha';
@@ -79,4 +70,4 @@ async function signIn(email, password) {
       return error.message;
     
 }
-export { signInGoogle, sair, signIn, perfil };
+export { signInGoogle, sair, signIn, checkLogin, };

@@ -1,4 +1,4 @@
-import { signInGoogle, signIn } from '../../services/firebaseLogin.js';
+import { signInGoogle, signIn, checkLogin } from '../../services/firebaseLogin.js';
 
 export default () => {
   const container = document.createElement('div');
@@ -45,8 +45,7 @@ export default () => {
     const passwordUser = senhaUser.value;
 
     await signIn(emailUser, passwordUser);
-    
-    
+    if (checkLogin === true);
   }
   const btnLogin = container.querySelector('#submit');
   btnLogin.addEventListener('click', login);

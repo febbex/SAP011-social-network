@@ -10,7 +10,6 @@
 h1{
   margin: 1rem;
 }
-
 p{
   margin: 1rem;
 }
@@ -19,7 +18,7 @@ p{
   text-align: center;
   align-items:center;
   justify-content:center;
-  color: #1E1E1E;
+  color: #1E284C;
 
   }
   .input-field{
@@ -28,9 +27,11 @@ p{
     background-color: transparent;
     font-size: 18px;
     padding: 7px;
-    border-bottom: 1px solid #1E1E1E; 
+    border-bottom: 2px solid #E8E8E8; 
 } 
-
+.input-field::placeholder {
+  color: #1E284C;
+}
 .input-field:focus{
   display: inline;
   margin: 0;
@@ -53,12 +54,12 @@ p{
     width: 54px;
     height: 54px;
    
- 
    }
    #contaGoogle{
     outline: none;
-    background: #ffffff;
+    background:transparent;
     border: #ffffff;
+   
    }
   #submit {
     background-color: #C892E6;
@@ -74,6 +75,8 @@ p{
 #submit:hover{
     background: #A77ABF;
 }
+
+
   #botaoCadastro{
     color: #77CC66;
     text-decoration: none;

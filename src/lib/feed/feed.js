@@ -32,35 +32,51 @@ export default () => {
     </div> 
     </form>
     </div>
-    <ul class="posts">
-    <li class="post">
-        <div class="infoUserPost">
-            <div class="imgUserPost"></div>
-                    <strong class="name">
-                        Usuário teste
-                    </strong>
-                </div>
-        </div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua.
-            Quis ipsum suspendisse ultrices gravida.
-            Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
-
-        <div class="actionBtnPost">
-                <button class="btnPost">
-                    <img src="./assets/icon_curtida2.svg" alt="curtir">
-                </button>
-                <button class="btnPost">
-                    <img src="./assets/icon_edt2.svg" alt="editar">
-                </button>
-            </div>
-    </li>
- 
-</ul>
+    <ul class="posts"></ul>
     </main>
  </form>
 </section>`;
   container.innerHTML = template;
+
+ // Seleciona o botão "Publicar" e o textarea
+  const btnPublicar = container.querySelector('#publicar');
+  const textarea = container.querySelector('textarea');
+  const postsList = container.querySelector('.posts'); // Seleciona a lista de posts
+
+  // Adiciona um evento de clique ao botão "Publicar"
+  btnPublicar.addEventListener('click', (event) => {
+    event.preventDefault(); // Evita que o formulário seja submetido (recarregando a página)
+
+     // Obtém o texto do textarea
+    const texto = textarea.value;
+
+    if (texto.trim() !== '') { // Verifica se o texto não está vazio
+    // Cria um novo elemento de post
+      const newPost = document.createElement('li');
+      newPost.classList.add('post'); // Adiciona a classe 'post' ao novo post
+      newPost.innerHTML = `
+        <div class="infoUserPost">
+          <div class="imgUserPost"></div>
+          <strong class="name">Usuário teste</strong>
+        </div>
+        <p>${texto}</p>
+        <div class="actionBtnPost">
+          <button class="btnPost">
+            <img src="./assets/icon_curtida2.svg" alt="curtir">
+          </button>
+          <button class="btnPost">
+            <img src="./assets/icon_edt2.svg" alt="editar">
+          </button>
+        </div>
+      `;
+
+      // Adiciona o novo post à lista de posts
+      postsList.appendChild(newPost);
+
+      // Limpa o textarea após a publicação
+      textarea.value = '';
+    }
+  });
 
   const btnSair = container.querySelector('#btnSair');
   btnSair.addEventListener('click', sair); // chama a função sair, ao clicar no btn sair //
