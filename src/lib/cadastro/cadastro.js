@@ -1,3 +1,5 @@
+import { register } from '../../services/firebaseCadastro';
+
 export default () => {
   const container = document.createElement('div');
   const template = `
@@ -49,7 +51,6 @@ export default () => {
   const btnCadastrar = container.querySelector('#btnCadastrar');
   btnCadastrar.addEventListener('click', cadastro);
  
-
   return container;
 }
 
