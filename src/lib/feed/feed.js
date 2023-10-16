@@ -1,6 +1,6 @@
 // feed.js
 import { sair } from '../../services/firebaseLogin.js';
-import { gravarPost, getCurrentUserName } from '../../services/firestore.js';
+import { gravarPost, getCurrentUserName, lerPosts } from '../../services/firestore.js';
 
 export default () => {
   const container = document.createElement('div');
@@ -34,7 +34,8 @@ export default () => {
       </main>
     </section>`;
   container.innerHTML = template;
-
+  lerPosts();
+  
   const btnPublicar = container.querySelector("#publicar");
   const postPlace = container.querySelector("#postPlace");
   const postsList = container.querySelector(".posts");
@@ -50,8 +51,8 @@ export default () => {
     const postagem = document.createElement('li');
     postagem.innerHTML = `
       <div class="infoUserPost">
-        <div class="imgUserPost"></div>
-        <strong class="name">${usuário}</strong>
+        <img src="" class="imgUserPost" alt="fotoDoPerfil">
+        <strong class="username">${usuário}</strong>
       </div>
       <textarea name="textarea" id="postFeed">${postText}</textarea>
       <p class="postDate">Postado em: ${currentDate}</p>
@@ -70,7 +71,7 @@ export default () => {
     // Limpe o campo de texto após a publicação
     postPlace.value = "";
 
-    // Gravar a postagem no Firestore
+    //chamar o Gravar a postagem no Firestore
     gravarPost(postText, currentDate,usuário);
   });
 
