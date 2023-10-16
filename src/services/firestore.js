@@ -12,7 +12,7 @@ export function getCurrentUserName() {
     return "Nome de usuário padrão"; // Ou um valor padrão caso o usuário não esteja autenticado
   }
 }
-export function lerPosts() {
+export function lerPosts(postTemplate) {
   const q = query(collection(db, "posts"));
   const unsubscribe = onSnapshot(q, (querySnapshot) => {
     const postsList = document.querySelector(".posts");
@@ -24,27 +24,7 @@ export function lerPosts() {
         date: doc.data().date,
         uid: doc.data().uid,
       }
-
-      // Crie um elemento para a postagem e insira os dados
-      const postagem = document.createElement('li');
-      postagem.innerHTML = `
-        <div class="infoUserPost">
-          <img src="./assets/foto_perfil.png" class="imgUserPost" alt="fotoDoPerfil">
-          <strong class="username">${obj.uid}</strong>
-        </div>
-        <textarea name="textarea" id="postFeed">${obj.text}</textarea>
-        <p class="postDate">Postado em: ${obj.date}</p>
-        <div class="actionBtnPost">
-          <button class="btnPost">
-            <img src="./assets/icon_curtida2.svg" alt="curtir">
-          </button>
-          <button class="btnPost">
-            <img src="./assets/icon_edt2.svg" alt="editar">
-          </button>
-        </div>`;
-
-      // Adicione o elemento da postagem à lista de postagens
-      postsList.appendChild(postagem);
+      postTemplate(obj)
     });
   });
 }
@@ -54,6 +34,7 @@ export async function gravarPost(text, date,uid) {
     text: text,
     date: date,
     uid: uid, 
+    like: [],
   });
   console.log("post: ", docRef.id);
 }
