@@ -2,6 +2,7 @@ import login from './lib/login/login.js';
 import cadastro from './lib/cadastro/cadastro.js';
 import feed from './lib/feed/feed.js';
 
+
 const main = document.querySelector('#app');
 
 const init = () => {

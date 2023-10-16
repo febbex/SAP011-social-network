@@ -7,7 +7,6 @@
     box-sizing: border-box;
 
 }
-
 header {
     width: 100%;
     height: 50px;
@@ -109,7 +108,12 @@ strong {
     flex-direction: column;
     width: 100%;
 }
-
+#postFeed{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: #F5E2FF ;
+}
 textarea {
     background: #FCF6FF;
     margin: 15px 0;
@@ -153,7 +157,11 @@ textarea {
     background: #F5E2FF;
 }
 /*Feed*/
-ul.posts li.post{
+.posts{
+    width: 100%;
+    margin-top: 50px;
+}
+ul.posts li{
     margin-bottom: 50px;
     width: 100%;
     background: #DEA2FF;
@@ -175,4 +183,7 @@ ul.posts li.post{
 .infoUserPost{
     display: flex;
     align-items: center;
+}
+.postDate{
+    font-size: small;
 }
