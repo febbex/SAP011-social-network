@@ -29,7 +29,7 @@ export function lerPosts() {
       const postagem = document.createElement('li');
       postagem.innerHTML = `
         <div class="infoUserPost">
-          <img src="" class="imgUserPost" alt="fotoDoPerfil">
+          <img src="./assets/foto_perfil.png" class="imgUserPost" alt="fotoDoPerfil">
           <strong class="username">${obj.uid}</strong>
         </div>
         <textarea name="textarea" id="postFeed">${obj.text}</textarea>

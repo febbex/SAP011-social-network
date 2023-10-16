@@ -1,9 +1,11 @@
-// feed.js
 import { sair } from '../../services/firebaseLogin.js';
 import { gravarPost, getCurrentUserName, lerPosts } from '../../services/firestore.js';
 
 export default () => {
   const container = document.createElement('div');
+  lerPosts();
+  // Recupere o nome de usuário do Firebase
+  const usuário = getCurrentUserName();
   const template = `
     <section id="feed">
       <header>
@@ -14,12 +16,11 @@ export default () => {
           <img src="./assets/icon_sair.png" alt="icon_sair">
         </button>
       </header>
-    
       <main class="main">
         <div class="newPost">
           <div class="infoUser">
-            <div class="imgUser"></div>
-            <strong>Usuário teste</strong>
+          <img src="./assets/foto_perfil.png" class="imgUser" alt="fotoDoPerfil">
+          <strong class="username">${usuário}</strong>         
           </div>
           <form action="" class="formPost">
             <textarea name="textarea" placeholder="Como foi sua viagem?" id="postPlace"></textarea>
@@ -33,50 +34,48 @@ export default () => {
         </div>
       </main>
     </section>`;
-  container.innerHTML = template;
-  lerPosts();
+     
+    container.innerHTML = template;
   
-  const btnPublicar = container.querySelector("#publicar");
-  const postPlace = container.querySelector("#postPlace");
-  const postsList = container.querySelector(".posts");
-
-  //Aparecer o nome usuário
-  btnPublicar.addEventListener('click', () => {
-    const postText = postPlace.value;
-    const currentDate = new Date().toLocaleString();
-    // Recupere o nome de usuário do Firebase
-    const usuário = getCurrentUserName();
-
-    // Crie um elemento para a postagem e insira os dados
-    const postagem = document.createElement('li');
-    postagem.innerHTML = `
-      <div class="infoUserPost">
-        <img src="" class="imgUserPost" alt="fotoDoPerfil">
-        <strong class="username">${usuário}</strong>
-      </div>
-      <textarea name="textarea" id="postFeed">${postText}</textarea>
-      <p class="postDate">Postado em: ${currentDate}</p>
-      <div class="actionBtnPost">
-        <button class="btnPost">
-          <img src="./assets/icon_curtida2.svg" alt="curtir">
-        </button>
-        <button class="btnPost">
-          <img src="./assets/icon_edt2.svg" alt="editar">
-        </button>
-      </div>`;
-
-    // Adicione o elemento da postagem à lista de postagens
-    postsList.appendChild(postagem);
-
-    // Limpe o campo de texto após a publicação
-    postPlace.value = "";
-
-    //chamar o Gravar a postagem no Firestore
-    gravarPost(postText, currentDate,usuário);
-  });
-
-  const btnSair = container.querySelector('#btnSair');
-  btnSair.addEventListener('click', sair);
-
-  return container;
-};
+    const btnPublicar = container.querySelector("#publicar");
+    const postPlace = container.querySelector("#postPlace");
+    const postsList = container.querySelector(".posts");
+  
+    //Aparecer o nome usuário
+    btnPublicar.addEventListener('click', () => {
+      const postText = postPlace.value;
+      const currentDate = new Date().toLocaleString();
+  
+      // Crie um elemento para a postagem e insira os dados
+      const postagem = document.createElement('li');
+      postagem.innerHTML = `
+        <div class="infoUserPost">
+        <img src="./assets/foto_perfil.png" class="imgUserPost" alt="fotoDoPerfil">
+          <strong class="username">${usuário}</strong>
+        </div>
+        <textarea name="textarea" id="postFeed">${postText}</textarea>
+        <p class="postDate">Postado em: ${currentDate}</p>
+        <div class="actionBtnPost">
+          <button class="btnPost">
+            <img src="./assets/icon_curtida2.svg" alt="curtir">
+          </button>
+          <button class="btnPost">
+            <img src="./assets/icon_edt2.svg" alt="editar">
+          </button>
+        </div>`;
+  
+      // Adicione o elemento da postagem à lista de postagens
+      postsList.appendChild(postagem);
+  
+      // Limpe o campo de texto após a publicação
+      postPlace.value = "";
+  
+      //chamar o Gravar a postagem no Firestore
+      gravarPost(postText, currentDate, usuário);
+    });
+  
+    const btnSair = container.querySelector('#btnSair');
+    btnSair.addEventListener('click', sair);
+  
+    return container;
+  };
