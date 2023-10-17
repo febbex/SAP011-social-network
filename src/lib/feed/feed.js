@@ -1,5 +1,5 @@
 import { sair } from '../../services/firebaseLogin.js';
-import { gravarPost, getCurrentUserName, lerPosts } from '../../services/firestore.js';
+import { gravarPost, getCurrentUserName, lerPosts, editPost } from '../../services/firestore.js';
 
 export default () => {
   const container = document.createElement('div');
@@ -53,7 +53,7 @@ export default () => {
           <button class="btnPost">
             <img src="./assets/icon_curtida2.svg" alt="curtir">
           </button>
-          <button class="btnPost">
+          <button class="editPost"-${post.id} data-postid="${post.id}"> 
             <img src="./assets/icon_edt2.svg" alt="editar">
           </button>
         </div>`;
@@ -75,6 +75,13 @@ export default () => {
   
     const btnSair = container.querySelector('#btnSair');
     btnSair.addEventListener('click', sair);
+
+    const btnEditar = container.querySelector('.editPost');
+    btnEditar.addEventListener('click', (event) => {
+      event.preventDefault();
+      editPost();
+    })
+   
   
     return container;
   };
