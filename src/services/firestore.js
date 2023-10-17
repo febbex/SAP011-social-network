@@ -1,6 +1,6 @@
 // firestore.js
 import { db, auth } from "./firebaseConfig.js";
-import { collection, query, onSnapshot, addDoc } from "firebase/firestore";
+import { collection, query, onSnapshot, addDoc, orderBy, } from "firebase/firestore";
 
 // Função para obter o nome de usuário do usuário autenticado
 export function getCurrentUserName() {
@@ -13,7 +13,7 @@ export function getCurrentUserName() {
   }
 }
 export function lerPosts(postTemplate) {
-  const q = query(collection(db, "posts"));
+  const q = query(collection(db, "posts"), orderBy ('date', 'desc'));
   const unsubscribe = onSnapshot(q, (querySnapshot) => {
     const postsList = document.querySelector(".posts");
     postsList.innerHTML = ""; // Limpe a lista de posts antes de atualizá-la
@@ -23,18 +23,18 @@ export function lerPosts(postTemplate) {
         text: doc.data().text,
         date: doc.data().date,
         uid: doc.data().uid,
-        like: doc.data().like || [],
       }
       postTemplate(obj)
     });
   });
 }
-//gravando os posts
-export async function gravarPost(text, date,uid) {
+// Atualize sua função gravarPost para incluir o campo "likes".
+export async function gravarPost(text, date, uid) {
   const docRef = await addDoc(collection(db, "posts"), {
     text: text,
     date: date,
-    uid: uid, 
+    uid: uid,
+    likes: [], // Inicialmente, a postagem não possui nenhum "like".
   });
   console.log("post: ", docRef.id);
 }

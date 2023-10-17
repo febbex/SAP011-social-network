@@ -72,7 +72,7 @@ export default () => {
       //chamar o Gravar a postagem no Firestore
       gravarPost(postText, currentDate, usuário);
     });
-
+  
     const btnSair = container.querySelector('#btnSair');
     btnSair.addEventListener('click', sair);
   
