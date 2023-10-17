@@ -48,12 +48,12 @@ export default () => {
           <strong class="username_print"">${obj.uid}</strong>
         </div>
         <p name="textarea" id="postFeed">${obj.text}</p>
-        <p class="postDate">Postado em: ${obj.date}</p>
+        <p class="postDate">${obj.date}</p>
         <div class="actionBtnPost">
-          <button class="btnPost">
-            <img src="./assets/icon_curtida2.svg" alt="curtir">
+          <button class="likeBtn">
+           <p><img src="./assets/icon_curtida2.svg" alt="curtir">0</p>
           </button>
-          <button class="btnPost">
+          <button class="btnEdtPost">
             <img src="./assets/icon_edt2.svg" alt="editar">
           </button>
         </div>`;
@@ -72,12 +72,9 @@ export default () => {
       //chamar o Gravar a postagem no Firestore
       gravarPost(postText, currentDate, usuário);
     });
-  
+
     const btnSair = container.querySelector('#btnSair');
     btnSair.addEventListener('click', sair);
   
     return container;
   };
-  /*<button id="btnPerfil">
-  <img src="./assets/user-branco.png" alt="icon_perfil">Perfil
-</button>*/

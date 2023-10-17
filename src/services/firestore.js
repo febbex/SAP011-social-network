@@ -23,6 +23,7 @@ export function lerPosts(postTemplate) {
         text: doc.data().text,
         date: doc.data().date,
         uid: doc.data().uid,
+        like: doc.data().like || [],
       }
       postTemplate(obj)
     });
@@ -34,7 +35,7 @@ export async function gravarPost(text, date,uid) {
     text: text,
     date: date,
     uid: uid, 
-    like: [],
   });
   console.log("post: ", docRef.id);
 }
+

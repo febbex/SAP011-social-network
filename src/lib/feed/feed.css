@@ -80,8 +80,6 @@ header {
     border-radius: 20px;
 
 }
-
-
 .infoUser {
     display: flex;
     align-items: center;
@@ -115,7 +113,7 @@ strong {
     margin: 15px 0;
     padding: 25px;
     border-radius: 10px;
-     
+    color: #1E284C;
 }
 textarea {
     background: #FCF6FF;
@@ -148,18 +146,22 @@ textarea {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: 10px;
     
 }
 .actionBtnPost button {
     outline: none;
-    background:#DEA2FF ;
+    background: none ;
     border: none;
     cursor: pointer;
     /*margin-right: 15px;*/
     transition: background 0.2s;
 }
-.actionBtnPost button:hover {
+.btnEdtPost:hover {
     background: #F5E2FF;
+}
+.likeBtn:hover img{
+    background: url(../../assets/icon_curtida_verde.svg);
 }
 /*Feed*/
 .posts{
@@ -191,4 +193,5 @@ ul.posts li{
 }
 .postDate{
     font-size: small;
+    color: #1E284C;
 }
