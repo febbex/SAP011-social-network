@@ -1,5 +1,9 @@
 import { sair } from '../../services/firebaseLogin.js';
+<<<<<<< HEAD
 import { gravarPost, getCurrentUserName, lerPosts, excluirPost } from '../../services/firestore.js';
+=======
+import { gravarPost, getCurrentUserName, lerPosts, editPost } from '../../services/firestore.js';
+>>>>>>> 547e3658b2e5775c5c7238340309fc1c00cf3941
 
 export default () => {
   const container = document.createElement('div');
@@ -36,9 +40,37 @@ export default () => {
 
   container.innerHTML = template;
 
+<<<<<<< HEAD
   const btnPublicar = container.querySelector("#publicar");
   const postPlace = container.querySelector("#postPlace");
   const postsList = container.querySelector(".posts");
+=======
+    const btnPublicar = container.querySelector("#publicar");
+    const postPlace = container.querySelector("#postPlace");
+    const postsList = container.querySelector(".posts");
+  
+    function postTemplate(obj){
+      const postagem = document.createElement('li');
+      postagem.innerHTML = `
+        <div class="infoUserPost">
+          <img src="./assets/foto_perfil.png" class="imgUserPost" alt="fotoDoPerfil">
+          <strong class="username_print"">${obj.uid}</strong>
+        </div>
+        <p name="textarea" id="postFeed">${obj.text}</p>
+        <p class="postDate">${obj.date}</p>
+        <div class="actionBtnPost">
+          <button class="likeBtn">
+           <p><img src="./assets/icon_curtida2.svg" alt="curtir">0</p>
+          </button>
+<<<<<<< HEAD
+          <button class="editPost"-${post.id} data-postid="${post.id}"> 
+=======
+          <button class="btnEdtPost">
+>>>>>>> 4c53dc3403cf65e525b6d0fe1db09e7782a63f1c
+            <img src="./assets/icon_edt2.svg" alt="editar">
+          </button>
+        </div>`;
+>>>>>>> 547e3658b2e5775c5c7238340309fc1c00cf3941
 
   function postTemplate(obj) {
     const postagem = document.createElement('li');
@@ -72,6 +104,7 @@ export default () => {
       // Remove o elemento da postagem da lista
       postagem.remove();
     });
+<<<<<<< HEAD
   }
 
   //Aparecer o nome usuário
@@ -91,3 +124,18 @@ export default () => {
 
   return container;
 };
+=======
+  
+    const btnSair = container.querySelector('#btnSair');
+    btnSair.addEventListener('click', sair);
+
+    const btnEditar = container.querySelector('.editPost');
+    btnEditar.addEventListener('click', (event) => {
+      event.preventDefault();
+      editPost();
+    })
+   
+  
+    return container;
+  };
+>>>>>>> 547e3658b2e5775c5c7238340309fc1c00cf3941
