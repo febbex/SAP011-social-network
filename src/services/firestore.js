@@ -1,6 +1,6 @@
 // firestore.js
 import { db, auth } from "./firebaseConfig.js";
-import { collection, query, onSnapshot, addDoc, orderBy, } from "firebase/firestore";
+import { collection, query, onSnapshot, addDoc, orderBy,doc, deleteDoc, } from "firebase/firestore";
 
 // Função para obter o nome de usuário do usuário autenticado
 export function getCurrentUserName() {
@@ -23,6 +23,7 @@ export function lerPosts(postTemplate) {
         text: doc.data().text,
         date: doc.data().date,
         uid: doc.data().uid,
+        id: doc.id,
       }
       postTemplate(obj)
     });
@@ -34,8 +35,12 @@ export async function gravarPost(text, date, uid) {
     text: text,
     date: date,
     uid: uid,
-    likes: [], // Inicialmente, a postagem não possui nenhum "like".
+    likes: [], 
   });
   console.log("post: ", docRef.id);
+}
+
+export async function excluirPost(id) {
+  await deleteDoc(doc(db, 'posts', id));
 }
 
