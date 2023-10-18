@@ -34,16 +34,17 @@ export async function gravarPost(text, date, uid) {
     text: text,
     date: date,
     uid: uid,
-    likes: [], 
+    likes: [],
   });
-  console.log("post: ", docRef.id);
+  console.log("post:", docRef.id);
 }
-export async function editPost(id, text) {
-  const refDoc = doc(db, 'posts', `${id}`);
-  await updateDoc(refDoc, {
-    text: text,
+export async function editPost(postId, newText) {
+  const postRef = doc(db, 'posts', postId);
+  await updateDoc(postRef, {
+    text: newText,
+    
   });
-};
+}
 export async function excluirPost(id) {
   await deleteDoc(doc(db, 'posts', id));
 }

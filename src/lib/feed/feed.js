@@ -50,7 +50,7 @@ export default () => {
           <img src="./assets/icon_excluir.png" alt="excluir">
         </button>
       </div>
-      <p name="textarea" id="postFeed">${obj.text}</p>
+      <p data-postid="${obj.id} name="textarea" id="postFeed">${obj.text}</p>
       <p class="postDate">${obj.date}</p>
       <div class="actionBtnPost">
         <button class="likeBtn">
@@ -64,33 +64,41 @@ export default () => {
       // Adicione o elemento da postagem à lista de postagens
       postsList.appendChild(postagem);
 
-   
 
-    //Aparecer o nome usuário
-    btnPublicar.addEventListener('click', () => {
-      const postText = postPlace.value;
-      const currentDate = new Date().toLocaleString();
+      btnPublicar.addEventListener('click', () => {
+        const postText = postPlace.value;
+        if (postText.trim() !== "") {
+          const currentDate = new Date().toLocaleString();
 
-      // Limpe o campo de texto após a publicação
-      postPlace.value = "";
+          postPlace.value = ""; // Limpe o campo de texto após a publicação
+          gravarPost(postText, currentDate, usuário);
 
-      // Chame a função para gravar a postagem no Firestore
-      gravarPost(postText, currentDate, usuário);
-    });
+        } else {
+          // Exiba uma mensagem de erro para o usuário (o campo está vazio)
+          alert('Insira um texto.');
+        }
+      });
 
-    const btnEditar = container.querySelector('.editPost');
-    btnEditar.addEventListener('click', (event) => {
-      event.preventDefault();
-      editPost();
-    })
-    const deletePost = postagem.querySelector(".excluirBtn");
+  const postTextElement = postagem.querySelector('#postFeed');
+  const editButton = postagem.querySelector('.editPost');
 
-    deletePost.addEventListener('click', (event) => {
-      const idPost = event.target.dataset.postid;
-      if (window.confirm('Deseja excluir esta publicação?')) excluirPost(idPost);
+  editButton.addEventListener('click', () => {
+    const newText = prompt('Editar a postagem:', postTextElement.textContent);
+    if (newText !== null) {
+      // Chame a função para editar a postagem no Firestore
+      editPost(obj.id, newText);
+    }
+  });
+  const btnDeletar = postagem.querySelector('.excluirBtn');
+
+  btnDeletar.addEventListener('click', () => {
+    if (window.confirm('Deseja excluir esta publicação?')) {
+      excluirPost(obj.id);
       // Remove o elemento da postagem da lista
       postagem.remove();
-    });
+      postsList.appendChild(postagem);
+    }
+  });
   }
     const btnSair = container.querySelector('#btnSair');
     btnSair.addEventListener('click', sair);
