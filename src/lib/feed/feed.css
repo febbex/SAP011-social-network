@@ -157,7 +157,7 @@ textarea {
     /*margin-right: 15px;*/
     transition: background 0.2s;
 }
-.btnEdtPost:hover {
+.editPost:hover {
     background: #F5E2FF;
 }
 .likeBtn:hover img{
