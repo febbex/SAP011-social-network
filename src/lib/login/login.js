@@ -1,4 +1,4 @@
-import { signInGoogle, signIn, checkLogin } from '../../services/firebaseLogin.js';
+import { signInGoogle, signIn, checkLogin } from '../../firebase/firebaseLogin.js';
 
 export default () => {
   const container = document.createElement('div');
@@ -16,6 +16,7 @@ export default () => {
 <input type="email" id="loginUser"class="input-field" placeholder="E-mail" required autofocus>
 <p><label for="senhaUser"></label>
 <input type="password" id="senhaUser" class ="input-field" placeholder="Senha" required></p>
+<div id="error-message"></div>
 
 <button id="submit" type="submit">Login</button>
 </section>
@@ -59,12 +60,9 @@ export default () => {
 
   const btnLoginGoogle = container.querySelector('#contaGoogle');
 
-  document.addEventListener('DOMContentLoaded', function () {
-    if (btnLoginGoogle) {
-    }
+  document.addEventListener('DOMContentLoaded', () => {
   });
-
   btnLoginGoogle.addEventListener('click', loginGoogle);
 
   return container;
-}
+};

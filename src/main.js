@@ -2,13 +2,12 @@ import login from './lib/login/login.js';
 import cadastro from './lib/cadastro/cadastro.js';
 import feed from './lib/feed/feed.js';
 
-
 const main = document.querySelector('#app');
 
 const init = () => {
   window.addEventListener('hashchange', () => {
     main.innerHTML = '';
-    switch (window.location.hash) {      
+    switch (window.location.hash) {
       case '#login':
         main.appendChild(login());
         break;

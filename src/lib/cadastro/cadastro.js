@@ -1,4 +1,4 @@
-import { register } from '../../services/firebaseCadastro';
+import { register } from '../../firebase/firebaseCadastro';
 
 export default () => {
   const container = document.createElement('div');
@@ -26,12 +26,12 @@ export default () => {
 
   <p><label for="confirmPassword"></label>
   <input type="password" id="confirmPassword" placeholder="Confirme sua senha" required></p>
-    
+  <div id="error-message"></div>
+
   <button type=submit id="btnCadastrar">Cadastrar</button>
 
   <p>Já possui uma conta?</p>
   <a id="acessarConta" href="#login">Acessar sua conta agora</a>
-
   </form>
   </section>`;
   container.innerHTML = template;
@@ -39,18 +39,15 @@ export default () => {
   const email = container.querySelector('#email');
   const password = container.querySelector('#password');
 
-  async function cadastro (event) {
+  async function cadastro(event) {
     event.preventDefault();
 
     const userEmail = email.value;
     const userPassword = password.value;
-    
     await register(userEmail, userPassword);
   }
-
   const btnCadastrar = container.querySelector('#btnCadastrar');
   btnCadastrar.addEventListener('click', cadastro);
- 
-  return container;
-}
 
+  return container;
+};

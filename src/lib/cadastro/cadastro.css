@@ -19,7 +19,7 @@ section#container-cadastro {
 
 section#container-cadastro h1{
     font-size: 25px;
-    color:#1E1E1E
+    color:#1E284C
 }
 #imgCadastro {
     width: 136px;
@@ -27,18 +27,23 @@ section#container-cadastro h1{
     margin:auto;
     display: block;
 }
-
+p{
+    color: #1E284C;
+}
 input {
     border: none;
-    border-bottom: 1px solid #1E1E1E; /* Adiciona uma linha sublinhada */
-    color: #1E1E1E;
+    color: #1E284C;
     padding: 7px; 
     outline: none; /* Remove o contorno ao focar no input */
-    width: 220px;
+    border: none;
+    width: 380px;
+    background-color: transparent;
+    font-size: 18px;
+    border-bottom: 2px solid #E8E8E8; 
 }
 
 input::placeholder {
-    color: #1E1E1E;
+    color: #1E284C;
     text-align: left;
     font-size: 16px;
 }

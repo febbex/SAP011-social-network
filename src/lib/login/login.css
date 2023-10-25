@@ -19,8 +19,7 @@ p{
   align-items:center;
   justify-content:center;
   color: #1E284C;
-
-  }
+}
   .input-field{
     border: none;
     width: 380px;
@@ -86,3 +85,6 @@ p{
     max-width: 900px;
     margin: 0 auto;
   }
+#error-message{
+  color: #77CC66 ;
+}
