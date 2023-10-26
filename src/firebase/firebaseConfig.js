@@ -3,12 +3,12 @@ import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyCKrkRCYDujEg31zlOisPxj4Z5xBqpLiLM',
-  authDomain: 'mytrip-ba618.firebaseapp.com',
-  projectId: 'mytrip-ba618',
-  storageBucket: 'mytrip-ba618.appspot.com',
-  messagingSenderId: '349173921736',
-  appId: '1:349173921736:web:84b64ab17340c23c5db2fd',
+  apiKey: "AIzaSyD_SAbbG2HnJU-UfcIM7uVNsrQSRpWqgaE",
+  authDomain: "mytrip-1b924.firebaseapp.com",
+  projectId: "mytrip-1b924",
+  storageBucket: "mytrip-1b924.appspot.com",
+  messagingSenderId: "58686258726",
+  appId: "1:58686258726:web:b3f25f9728a2a8d09fb0e7"
 };
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
