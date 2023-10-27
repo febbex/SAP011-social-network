@@ -1,4 +1,4 @@
-import { register } from '../../firebase/firebaseCadastro';
+import { register } from '../../firebase/firebaseCadastro.js';
 
 export default () => {
   const container = document.createElement('div');
