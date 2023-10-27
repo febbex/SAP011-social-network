@@ -1,0 +1,237 @@
+@import url(https://db.onlinewebfonts.com/c/629a55a7e793da068dc580d184cc0e31?family=Open+Sans);
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Open sans";
+    box-sizing: border-box;
+
+}
+header {
+    width: 100%;
+    height: 50px;
+    background: #C892E6;
+    box-shadow: 1px 0 3px rgba(0, 0, 0, 4);
+}
+#btnPerfil {
+    /*tirar opção de ampliar caixa de texto*/
+    outline: none;
+    /*tira borda ao clicar*/
+    border: 0;
+    float: right;
+    background: #C892E6;
+    color: #ffffff;
+    font-size: 12px;
+    margin: 3px 3px;
+    cursor: pointer;
+}
+#btnPerfil img {
+    display: block;
+    width: 30px;
+    height: 30px;
+}
+#publicar {
+    background-color: #C892E6;
+    border-radius: 30px;
+    border-style: none;
+    width: 105px;
+    height: 25px;
+    color: #ffffff;
+    transition: background 0.2s;
+    cursor: pointer;
+}
+
+#publicar:hover{
+    background: #A77ABF;
+}
+#btnSair{
+     /*tirar opção de ampliar caixa de texto*/
+     outline: none;
+     /*tira borda ao clicar*/
+     border: 0;
+     background: #C892E6;
+     margin: 3px;
+     padding: 5px;
+     cursor: pointer;
+}
+#btnSair img {
+    display: block;
+    width: 34px;
+    height: 34px;    
+}
+.main {
+    max-width: 900px;
+    margin: 0 auto;
+}
+.newPost {
+    width: 100%;
+    height: 210px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 50px 0;
+    padding: 20px;
+
+    background: #F5E2FF;
+    border-radius: 20px;
+
+}
+.infoUser {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.imgUser {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #C892E6;
+}
+
+strong {
+    font-size: 16px;
+    color: #C892E6;
+    margin-left: 10px;
+}
+
+.formPost {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+#postFeed{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: #F5E2FF ;
+    margin: 15px 0;
+    padding: 25px;
+    border-radius: 10px;
+    color: #4E3959;
+}
+textarea {
+    background: #FCF6FF;
+    margin: 15px 0;
+    padding: 25px;
+    border-radius: 10px;
+    resize: none;
+    /*tirar opção de ampliar caixa de texto*/
+    outline: none;
+    /*tira borda ao clicar*/
+    border: 0;
+}
+.username_print{
+    color: #4E3959;
+}
+::placeholder {
+    color: #b8b1bc;
+    text-align: center;
+}
+
+.iconsAndBtn{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 10px;  
+}
+.actionBtnPost {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 10px;   
+}
+.actionBtnPost button {
+    outline: none;
+    background: none ;
+    border: none;
+    cursor: pointer;
+    /*margin-right: 15px;*/
+    transition: background 0.2s;
+}
+.editPost:hover {
+    background: #F5E2FF;
+}
+.likeBtn:hover img{
+    background: url(../../assets/icon_curtida_verde.svg);
+}
+.excluirBtn{
+    display: flex;
+    outline: none;
+    background: none ;
+    border: none;
+    margin-left: auto;
+    cursor: pointer;
+}
+/*Feed*/
+.posts{
+    width: 100%;
+    margin-top: 50px;
+}
+ul.posts li{
+    margin-bottom: 50px;
+    width: 100%;
+    background: #DEA2FF;
+    border-radius: 20px;
+    padding: 25px;
+    list-style: none;
+
+}
+.imgUserPost{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #4E3959;
+}
+
+.name{
+   color: #4E3959;
+}
+.infoUserPost{
+    display: flex;
+    align-items: center;
+}
+.postDate{
+    font-size: small;
+    color: #4E3959;
+}
+#saveEditBtn {
+    background-color: #95FF80;
+    border-radius: 30px;
+    border-style: none;
+    width: 105px;
+    height: 25px;
+    color: #1E284C;
+    transition: background 0.2s;
+    cursor: pointer;
+}
+
+#saveEditBtn:hover{
+    background: #86E673;
+}
+.edit-modal {
+    width: 100%;
+    max-width: 80%;
+    height: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    background: rgba(30, 40, 76, 0.9); /* Cor de fundo com opacidade de 0.7 (70%) */
+    border-radius: 20px;
+    padding: 15px;
+    list-style: none;
+}
+
+#editTextarea{
+    width: 100%;
+    resize: none; 
+    margin-bottom: 10px;
+    background: #E9EAED;
+    border-radius: 20px;
+    
+    list-style: none;  
+    align-items: center;
+}
