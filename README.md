@@ -6,9 +6,11 @@
 * [Testes de Usabilidade](#testes-de-usabilidade)
 * [Protótipos](#protótipos)
 * [Implementações Futuras](#implementações-futuras)
+* [Desenvolvedoras](#desenvolvedoras)
+
 
 ## Descrição do Projeto
-O My Trip é o terceiro projeto desenvolvido como parte do bootcamp da Laboratoria. Trata-se de uma rede social dedicada a viajantes, cujo objetivo é reunir pessoas que desejam compartilhar dicas e experiências de viagens. No aplicativo, os usuários podem criar postagens no feed, onde também é possível curtir, editar e excluir suas publicações.
+O My Trip é um projeto desenvolvido como parte do bootcamp da Laboratoria. Trata-se de uma rede social dedicada a viajantes, cujo objetivo é reunir pessoas que desejam compartilhar dicas e experiências de viagens. No aplicativo, os usuários podem criar postagens no feed, onde também é possível curtir, editar e excluir suas publicações.
 
 <h1 align='center'>My Trip</h1>
 
@@ -48,10 +50,10 @@ Estamos planejando adicionar várias funcionalidades ao My Trip para melhorar a 
 - Página do usuário, parar editar o Nickname
 - Interface para desktop
 
-Este projeto tem como objetivo conectar viajantes, facilitando a troca de informações e experiências, e continuaremos aprimorando-o com base no feedback dos usuários. Obrigado por acompanhar nosso progresso!
+Continuaremos aprimorando-o com base no feedback dos usuários. Obrigado por acompanhar nosso projeto!
 
 ## Desenvolvedoras
 
-- [@thamiresfebbo](https://github.com/thamiresfebbos)
+- [@thamiresfebbo](https://github.com/thamiresfebbo)
 - [@ariadnesantos](https://github.com/ariadnesantos)
 
