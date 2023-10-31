@@ -8,7 +8,7 @@
 * [Implementações Futuras](#implementações-futuras)
 
 ## Descrição do Projeto
-3º projeto desenvolvido para o bootcamp da Laboratoria. My Trip é uma rede social criada para reunir pessoas que desejam trocar dicas e experiências de viagens através de postagens no feed, onde também é possível curtir, editar e excluir publicações. 
+O My Trip é o terceiro projeto desenvolvido como parte do bootcamp da Laboratoria. Trata-se de uma rede social dedicada a viajantes, cujo objetivo é reunir pessoas que desejam compartilhar dicas e experiências de viagens. No aplicativo, os usuários podem criar postagens no feed, onde também é possível curtir, editar e excluir suas publicações.
 
 <h1 align='center'>My Trip</h1>
 
@@ -16,9 +16,12 @@
   
 ![gif do app](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTA5eGZ6anRubW50bXlsYjMyNjNkcnBmaTI5NzdybHd6ajZtOGxhZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Ug1pPnbLWTUYLk3PgF/giphy.gif)
 
+[Acesse o projeto aqui](https://mytrip-1b924.web.app/)
+
 </div>
 
-## Método Scrum 
+## Planejamento 
+Para gerenciar o desenvolvimento do projeto, utilizamos o Método Scrum. Você pode acompanhar nosso progresso e atividades no Trello.
 [Link do Trello](https://trello.com/invite/b/GNknWcZf/ATTI7a1d50e0a1b0f2991ddcfe191a42ea4c30D503C0/310-social-network)
 
 ## Histórias de Usuário
@@ -27,8 +30,7 @@
 `História de Usuário 3`: "Como uma pessoa com pouca experiência de viagens, gostaria de encontrar dicas relevantes para os meus próximos destinos."<br>
 
 ## Testes de Usabilidade
-Desenvolvemos um formulário para que os usuários preenchessem após fazer o teste de usabilidade, dando feedback da experiência que tiveram no app e também disponibilizamos uma pergunta aberta para sugestões.<br>
-[Link do formulário:](https://forms.gle/Js8uiRF7yxKxA6Tt9)</p>
+Realizamos testes de usabilidade com os usuários para aprimorar a experiência no aplicativo. Os usuários preencheram um formulário com feedback sobre sua experiência no app e também forneceram sugestões. Você pode acessar o [formulário aqui](https://forms.gle/Js8uiRF7yxKxA6Tt9)</p>
 
 ## Protótipos
 ![print do protótipo](./protótipo-de-alta.png)
@@ -38,7 +40,18 @@ Desenvolvemos um formulário para que os usuários preenchessem após fazer o te
 
 ## Implementações Futuras
 
+Estamos planejando adicionar várias funcionalidades ao My Trip para melhorar a experiência do usuário:
+
 - Botão menu hambúrguer
 - Botão Like
-- Página do Usuário, parar editar o Nickname
+- Adicionar imagem e localização no post
+- Página do usuário, parar editar o Nickname
 - Interface para desktop
+
+Este projeto tem como objetivo conectar viajantes, facilitando a troca de informações e experiências, e continuaremos aprimorando-o com base no feedback dos usuários. Obrigado por acompanhar nosso progresso!
+
+## Desenvolvedoras
+
+- [@thamiresfebbo](https://github.com/thamiresfebbos)
+- [@ariadnesantos](https://github.com/ariadnesantos)
+
