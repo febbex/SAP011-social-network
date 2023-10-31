@@ -4,12 +4,8 @@
 * [Planejamento](#método-scrum)
 * [Histórias de Usuário](#histórias-de-usuário)
 * [Testes de Usabilidade](#testes-de-usabilidade)
-* [Protótipos](#protótipo-de-alta-fidelidade)
+* [Protótipos](#protótipos)
 * [Funcionalidades e Demonstração da Aplicação](#funcionalidades-e-demosntração-da-aplicação)
-* [Acesso ao Projeto](#acesso-ao-projeto)
-* [Tecnologias Utilizadas](#tecnologias-utilizadas)
-* [Implementações Futuras](#implementações-futuras)
-* [Desenvolvedoras do Projeto](#desenvolvedoras-do-projeto)
 * [Implementações Futuras](#implementações-futuras)
 
 ## Descrição do Projeto
