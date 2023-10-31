@@ -1,12 +1,13 @@
 import { signInGoogle, signIn, checkLogin } from '../../firebase/firebaseLogin.js';
-
+import logo from '../../assets/logo_mytrip.png'
+import iconeGoogle from '../../assets/icon_google.png'
 export default () => {
   const container = document.createElement('div');
 
   const template = `
 <section id="container">
 
-<img class="logoMyTrip" src="./assets/logo_mytrip.png" alt="logo">
+<img class="logoMyTrip" src="${logo}" alt="logo">
 
 <h1>My Trip</h1>
 
@@ -23,7 +24,7 @@ export default () => {
 
 <p>ou fazer login com</p>
 <button id="contaGoogle">
-<img src="./assets/icon_google.png" alt="icon_google">
+<img src="${iconeGoogle}" alt="icon_google">
 </button>
 
 <section id="novaConta">
@@ -49,7 +50,7 @@ export default () => {
     if (checkLogin === true);
   }
   const btnLogin = container.querySelector('#submit');
-  btnLogin.addEventListener('click', login);
+  btnLogin.addEventListener('click', login); //dicionando um ouvinte de evento ao elemento armazenado na variável
 
   // função para logar com o google //
   async function loginGoogle(event) {

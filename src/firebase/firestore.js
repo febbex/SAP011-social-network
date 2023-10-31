@@ -20,7 +20,7 @@ export function getCurrentUserName() {
 
   return null; // Retorna null caso não haja usuário autenticado
 }
-
+//Essa função lê os posts do banco de dados Firestore
 export function lerPosts(postTemplate) {
   const q = query(collection(db, 'posts'), orderBy('date', 'desc'));
   onSnapshot(q, (querySnapshot) => {
@@ -38,7 +38,7 @@ export function lerPosts(postTemplate) {
     });
   });
 }
-
+//Essa função lê os posts do banco de dados Firestore
 export async function gravarPost(text, date, uid) {
   const docRef = await addDoc(collection(db, 'posts'), {
     text,
@@ -48,14 +48,14 @@ export async function gravarPost(text, date, uid) {
   });
   console.log('post:', docRef.id);
 }
-
+//Essa função permite que um usuário edite o texto de um post existente
 export async function editPost(postId, novoTexto) {
   const postRef = doc(db, 'posts', postId);
   await updateDoc(postRef, {
     text: novoTexto,
   });
 }
-
+//Essa função permite que um usuário exclua um post 
 export async function excluirPost(id) {
   await deleteDoc(doc(db, 'posts', id));
 }

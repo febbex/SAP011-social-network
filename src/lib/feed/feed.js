@@ -6,6 +6,11 @@ import {
   excluirPost,
   editPost,
 } from '../../firebase/firestore.js';
+import  iconeSair  from '../../assets/icon_sair.png';
+import  fotoPerfil  from '../../assets/foto_perfil.png';
+import  curtida  from '../../assets/icon_curtida2.svg';
+import  postEdt  from '../../assets/icon_edt2.svg';
+import  excluir  from '../../assets/icon_excluir.png';
 
 export default () => {
   const container = document.createElement('div');
@@ -15,14 +20,14 @@ export default () => {
     <section id="feed">
       <header>
         <button id="btnSair">
-          <img src="./assets/icon_sair.png" alt="icon_sair">
+          <img src="${iconeSair}" alt="icon_sair">
         </button>
       </header>
 
       <main class="main">
         <div class="newPost">
           <div class="infoUser">
-            <img src="./assets/foto_perfil.png" class="imgUser" alt="fotoDoPerfil">
+            <img src="${fotoPerfil}" class="imgUser" alt="fotoDoPerfil">
             <strong class="username">${usuário}</strong>
           </div>
           <form action="" class="formPost">
@@ -45,19 +50,22 @@ export default () => {
 
   // evento que publica o texto
   btnPublicar.addEventListener('click', () => {
-    const postText = postPlace.value;
-    if (postText.trim() !== '') {
-      const currentDate = new Date().toLocaleString();
+    const postText = postPlace.value; //referência a um campo de entrada de texto 
+    if (postText.trim() !== '') { 
+      // !== significa "não é igual a
+      //'' representa uma string vazia
+      //trim remove os espaços em branco do início e do final da string
+      const currentDate = new Date().toLocaleString(); //data e hr formata de acordo com as configurações regionais do navegador
 
-      postPlace.value = ''; // Limpe o campo de texto após a publicação
+      postPlace.value = ''; // Limpa o campo de texto após a publicação
       gravarPost(postText, currentDate, usuário);
     } else {
-      // Substitua o alert por um elemento HTML de mensagem
       const errorMessage = document.createElement('div');
       errorMessage.textContent = 'Insira um texto.';
       container.appendChild(errorMessage);
     }
   });
+  //modal de edição para uma postagem 
   function openEditModal(postId, currentText) {
     const modal = document.createElement('div');
     modal.className = 'edit-modal';
@@ -82,24 +90,24 @@ export default () => {
       }
     });
   }
-
+//template de todos os posts
   function postTemplate(obj) {
     const postagem = document.createElement('li');
     postagem.innerHTML = `
       <div class="infoUserPost">
-        <img src="./assets/foto_perfil.png" class="imgUserPost" alt="fotoDoPerfil">
+        <img src="${fotoPerfil}" class="imgUserPost" alt="fotoDoPerfil">
         <strong class="username_print">${obj.uid}</strong>
         <button data-postid="${obj.id}" class="excluirBtn">
-          <img src="./assets/icon_excluir.png" alt="excluir">
+          <img src="${excluir}" alt="excluir">
         </button>
       </div>
       <p data-postid="${obj.id}" name="textarea" id="postFeed">${obj.text}</p>
       <div class="actionBtnPost">
         <button class="likeBtn">
-          <p><img src="./assets/icon_curtida2.svg" alt="curtir">0</p>
+          <p><img src="${curtida}" alt="curtir">0</p>
         </button>
         <button class="editPost" data-postid="${obj.id}">
-          <img src="./assets/icon_edt2.svg" alt="editar">
+          <img src="${postEdt}" alt="editar">
         </button>
       </div>
       `;

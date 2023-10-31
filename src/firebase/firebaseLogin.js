@@ -37,18 +37,18 @@ async function sair() {
     });
   window.location.hash = '#login';
 }
-
+// função verifica se um usuário está autenticado
 function checkLogin() {
-  onAuthStateChanged(auth(), (user) => {
+  onAuthStateChanged(auth(), (user) => { //estado de autenticação do usuário
     if (user) {
-      window.location.hash = '#feed';
+      window.location.hash = '#feed'; //se positivo direciona para o feed
     } else {
-      window.location.hash = '#login';
+      window.location.hash = '#login'; //caso contrário para o login
     }
   });
 }
 
-function getErrorMessage(error) {
+function getErrorMessage(error) { //retorna uma mensagem de erro
   if (error.code === 'auth/invalid-login-credentials') {
     return 'Usuário não encontrado';
   }
@@ -60,12 +60,12 @@ function getErrorMessage(error) {
   }
   return error.message;
 }
-
+//exibe a mensagem de erro na interface
 async function displayErrorMessage(message) {
   const errorElement = document.getElementById('error-message');
   errorElement.textContent = message;
 }
-
+// login com um email e senha
 async function signIn(email, password) {
   await signInWithEmailAndPassword(auth(), email, password)
     .then(() => {

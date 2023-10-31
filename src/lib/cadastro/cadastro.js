@@ -1,11 +1,12 @@
 import { register } from '../../firebase/firebaseCadastro.js';
+import logoCadastro from '../../assets/outline-clipboard.png'
 
 export default () => {
   const container = document.createElement('div');
   const template = `
   <section id="container-cadastro">
 
-  <img id="imgCadastro" src="./assets/outline-clipboard.png" alt="logo">
+  <img id="imgCadastro" src="${logoCadastro}" alt="logo">
   
   <section id="formCadastro">
   <form action="" method="post">
