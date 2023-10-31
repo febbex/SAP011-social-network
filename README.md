@@ -5,7 +5,6 @@
 * [Histórias de Usuário](#histórias-de-usuário)
 * [Testes de Usabilidade](#testes-de-usabilidade)
 * [Protótipos](#protótipos)
-* [Funcionalidades e Demonstração da Aplicação](#funcionalidades-e-demosntração-da-aplicação)
 * [Implementações Futuras](#implementações-futuras)
 
 ## Descrição do Projeto
