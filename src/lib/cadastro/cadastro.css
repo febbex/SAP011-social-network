@@ -7,13 +7,14 @@
     font-family: "Open sans";
     box-sizing: border-box;
 }
-#container {
+#container{
+    width: 100vw;
+    height: 100vh;
     display: grid;
     text-align: center;
     align-items:center;
     justify-content:center;
     color: #1E284C;
-    padding: 2rem;
 }
 #formCadastro{
   text-align: center;
@@ -21,21 +22,19 @@
   flex-direction: column;
   height: fit-content;
   background-color: var(--color-light-50);
+  margin-top: -100px;
   padding: 20px 10px;
   border-radius: 20px;
   box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.336);
+  background: #ffffff;
 }
-
-
 section#container-cadastro h1{
     font-size: 25px;
     color:#1E284C
 }
 #imgCadastro {
-    width: 136px;
-    height: 195px;
-    margin:auto;
-    display: block;
+
+    display: none;
 }
 p{
     color: #1E284C;
@@ -79,11 +78,15 @@ input::placeholder {
 }
 /* Adicionei regras para o modo escuro */
 .dark #container {
-    background: #11162A;
+    background: #151C36;
     color: #ffffff;
+    background-image: url(../../assets/home_viagem.png);
+    background-repeat: no-repeat; /* Impede a repetição do GIF */
+    background-position: left; /* Posiciona o GIF à esquerda */
+    background-size: 800px;
   }
   .dark #formCadastro {
-    background: #1E284C;
+    background: #11162A;
     color: #77CC66;
   }
     
@@ -93,5 +96,49 @@ input::placeholder {
   } 
 
   .dark .input-field::placeholder {
+    color: #DEA2FF;
+  }
+
+.dark h1{
+    color: #ffffff;
+}
+@media(max-width:450px) {
+    #container{
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        text-align: center;
+        align-items:center;
+        justify-content:center;
+        color: #1E284C;
+    }
+    #imgCadastro {
+        width: 136px;
+        height: 195px;
+        margin:auto;
+        display: block;
+    }
+    
+    /* Adicionei regras para o modo escuro */
+.dark #container {
+    background: #151C36;
+    color: #ffffff;
+  }
+  .dark #formCadastro {
+    background: #11162A;
     color: #77CC66;
   }
+    
+  .dark .input-field{
+  color: #ffffff;
+    border-bottom: 2px solid #D1D1D1; 
+  } 
+
+  .dark .input-field::placeholder {
+    color: #DEA2FF;
+  }
+
+.dark h1{
+    color: #ffffff;
+}
+}

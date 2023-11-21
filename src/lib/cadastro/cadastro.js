@@ -1,5 +1,5 @@
 import { register } from '../../firebase/firebaseCadastro.js';
-import logoCadastro from '../../assets/outline-clipboard.png'
+import logoCadastro from '../../assets/outline-clipboard.png';
 
 export default () => {
   const container = document.createElement('div');

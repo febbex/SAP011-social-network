@@ -14,14 +14,18 @@ h1{
 p{
   margin: 1rem;
 }
-#container{
+#container {
   width: 100vw;
   height: 100vh;
   display: grid;
   text-align: center;
-  align-items:center;
-  justify-content:center;
+  align-items: center;
+  justify-content: center;
   color: #1E284C;
+  background-image: url(../../assets/home_viagem.png);
+  background-repeat: no-repeat; /* Impede a repetição do GIF */
+  background-position: left; /* Posiciona o GIF à esquerda */
+  background-size: 800px;
 
 }
 .input-field{
@@ -47,19 +51,17 @@ p{
   display: flex;
   flex-direction: column;
   height: fit-content;
-  margin-top: -60px;
+  margin-top: -100px;
   background-color: var(--color-light-50);
   padding: 20px 10px;
   border-radius: 20px;
   box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.336);
+  background: #ffffff;
 }
 
 .logoMyTrip {
-  width: 210px;
-  height: 210px;
-  margin: auto;
-  display: block;
 
+  display: none;
 } 
    #contaGoogle img{
     width: 54px;
@@ -104,12 +106,16 @@ p{
 }
 /* Adicionei regras para o modo escuro */
 .dark #container {
-  background: #11162A;
+  background: #151C36;
   color: #ffffff;
+  background-image: url(../../assets/home_viagem.png);
+  background-repeat: no-repeat; /* Impede a repetição do GIF */
+  background-position: left; /* Posiciona o GIF à esquerda */
+  background-size: 800px;
+
 }
 .dark #formLogin {
-  background: #1E284C;
-  color: #77CC66;
+  background: #11162A;
 }
 
 .dark .input-field{
@@ -120,7 +126,7 @@ p{
   color: #ffffff;
 }
 .dark .input-field::placeholder {
-  color: #77CC66;
+  color: #DEA2FF;
 }
 .icon-sun {
   /* Adicione as propriedades de estilo para o ícone do sol */
@@ -137,4 +143,50 @@ p{
   height: 30px;
   cursor: pointer;  
   
+}
+.dark h1{
+  color: #DEA2FF;
+}
+
+@media(max-width:450px) {
+
+  #container{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    text-align: center;
+    align-items:center;
+    justify-content:center;
+    color: #1E284C;
+    background-image:none;
+}
+
+    /* Adicionei regras para o modo escuro */
+.dark #container {
+    background: #151C36;
+    color: #ffffff;
+  }
+  .dark #formCadastro {
+    background: #11162A;
+    color: #77CC66;
+  }
+    
+  .dark .input-field{
+  color: #ffffff;
+    border-bottom: 2px solid #D1D1D1; 
+  } 
+
+  .dark .input-field::placeholder {
+    color: #DEA2FF;
+  }
+
+.dark h1{
+    color: #ffffff;
+}
+.logoMyTrip {
+  width: 210px;
+  height: 210px;
+  margin: auto;
+  display: block;
+} 
 }
