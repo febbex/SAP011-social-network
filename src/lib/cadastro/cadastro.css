@@ -7,15 +7,25 @@
     font-family: "Open sans";
     box-sizing: border-box;
 }
-
-section#container-cadastro {
+#container {
     display: grid;
-    flex-direction: column;
-    align-items: center;
     text-align: center;
-    justify-content: center;
-    margin-top: 5vw;
+    align-items:center;
+    justify-content:center;
+    color: #1E284C;
+    padding: 2rem;
 }
+#formCadastro{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  background-color: var(--color-light-50);
+  padding: 20px 10px;
+  border-radius: 20px;
+  box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.336);
+}
+
 
 section#container-cadastro h1{
     font-size: 25px;
@@ -36,7 +46,7 @@ input {
     padding: 7px; 
     outline: none; /* Remove o contorno ao focar no input */
     border: none;
-    width: 380px;
+    width: 300px;
     background-color: transparent;
     font-size: 18px;
     border-bottom: 2px solid #E8E8E8; 
@@ -67,4 +77,21 @@ input::placeholder {
     color: #77CC66;
     text-decoration: none;
 }
+/* Adicionei regras para o modo escuro */
+.dark #container {
+    background: #11162A;
+    color: #ffffff;
+  }
+  .dark #formCadastro {
+    background: #1E284C;
+    color: #77CC66;
+  }
+    
+  .dark .input-field{
+  color: #ffffff;
+    border-bottom: 2px solid #D1D1D1; 
+  } 
 
+  .dark .input-field::placeholder {
+    color: #77CC66;
+  }

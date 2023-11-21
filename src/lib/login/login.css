@@ -7,6 +7,7 @@
     font-family: "Open sans";
     box-sizing: border-box;
 }
+
 h1{
   margin: 1rem;
 }
@@ -14,19 +15,22 @@ p{
   margin: 1rem;
 }
 #container{
+  width: 100vw;
+  height: 100vh;
   display: grid;
   text-align: center;
   align-items:center;
   justify-content:center;
   color: #1E284C;
+
 }
-  .input-field{
-    border: none;
-    width: 380px;
-    background-color: transparent;
-    font-size: 18px;
-    padding: 7px;
-    border-bottom: 2px solid #E8E8E8; 
+.input-field{
+  border: none;
+  width: 300px;
+  background-color: transparent;
+  font-size: 18px;
+  padding: 7px;
+  border-bottom: 2px solid #D1D1D1; 
 } 
 .input-field::placeholder {
   color: #1E284C;
@@ -36,15 +40,23 @@ p{
   margin: 0;
   padding: 0;
   outline:none;/*tira borda ao clicar*/
-
 }
+
 #formLogin{
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  margin-top: -60px;
+  background-color: var(--color-light-50);
+  padding: 20px 10px;
+  border-radius: 20px;
+  box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.336);
 }
 
 .logoMyTrip {
-  width: 252px;
-  height: 252px;
+  width: 210px;
+  height: 210px;
   margin: auto;
   display: block;
 
@@ -52,6 +64,8 @@ p{
    #contaGoogle img{
     width: 54px;
     height: 54px;
+    border-radius: 15px;
+
    
    }
    #contaGoogle{
@@ -87,4 +101,40 @@ p{
   }
 #error-message{
   color: #77CC66 ;
+}
+/* Adicionei regras para o modo escuro */
+.dark #container {
+  background: #11162A;
+  color: #ffffff;
+}
+.dark #formLogin {
+  background: #1E284C;
+  color: #77CC66;
+}
+
+.dark .input-field{
+
+  border-bottom: 2px solid #D1D1D1; 
+} 
+.dark p{
+  color: #ffffff;
+}
+.dark .input-field::placeholder {
+  color: #77CC66;
+}
+.icon-sun {
+  /* Adicione as propriedades de estilo para o ícone do sol */
+  content: url('../../assets/icon-sun.png');
+}
+
+.icon-moon {
+  /* Adicione as propriedades de estilo para o ícone da lua */
+  content: url('../../assets/icon-moon.png');
+}
+
+#icon_lua{
+  width: 30px;
+  height: 30px;
+  cursor: pointer;  
+  
 }

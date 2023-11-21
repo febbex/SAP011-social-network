@@ -11,19 +11,25 @@ import  fotoPerfil  from '../../assets/foto_perfil.png';
 import  curtida  from '../../assets/icon_curtida2.svg';
 import  postEdt  from '../../assets/icon_edt2.svg';
 import  excluir  from '../../assets/icon_excluir.png';
+import lua from '../../assets/icon-moon.png'
+
 
 export default () => {
   const container = document.createElement('div');
+    // Verificar o estado do modo escuro e aplicar as classes apropriadas
+    const isDarkMode = localStorage.getItem('darkMode') === 'true';
+    container.classList.toggle('dark', isDarkMode);
   // Recupere o nome de usuário do Firebase
   const usuário = getCurrentUserName();
   const template = `
-    <section id="feed">
+  <section id="feed">
       <header>
         <button id="btnSair">
           <img src="${iconeSair}" alt="icon_sair">
         </button>
+        <button id="btnDark"><img id="icon_lua" class="icon-moon" src="${lua}" alt="logo"></button>
       </header>
-
+  
       <main class="main">
         <div class="newPost">
           <div class="infoUser">
@@ -47,6 +53,18 @@ export default () => {
   const btnPublicar = container.querySelector('#publicar');
   const postPlace = container.querySelector('#postPlace');
   const postsList = container.querySelector('.posts');
+
+  const mode = container.querySelector('#icon_lua');
+
+  mode.addEventListener('click', () => {
+    
+    mode.classList.toggle('icon-moon');
+    mode.classList.toggle('icon-sun');
+    
+    // Adicionei a classe 'dark' ao #container para ativar o modo escuro
+    container.classList.toggle('dark');
+  });
+
 
   // evento que publica o texto
   btnPublicar.addEventListener('click', () => {
