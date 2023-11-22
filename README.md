@@ -6,7 +6,7 @@
 * [Testes de Usabilidade](#testes-de-usabilidade)
 * [Protótipos](#protótipos)
 * [Implementações Futuras](#implementações-futuras)
-* [Desenvolvido](#desenvolvido)
+* [Desenvolvedora](#Desenvolvedora)
 
 
 ## Descrição do Projeto
@@ -52,7 +52,7 @@ Estamos planejando adicionar várias funcionalidades ao My Trip para melhorar a 
 
 Continuaremos aprimorando-o com base no feedback dos usuários. Obrigado por acompanhar nosso projeto!
 
-## Desenvolvido por
+## Desenvolvedora
 
 - [@thamiresfebbo](https://github.com/thamiresfebbo)
 <div>
