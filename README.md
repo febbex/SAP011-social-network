@@ -55,4 +55,6 @@ Continuaremos aprimorando-o com base no feedback dos usuários. Obrigado por aco
 ## Desenvolvido por
 
 - [@thamiresfebbo](https://github.com/thamiresfebbo)
+<div>
   <a href="https://www.linkedin.com/in/thamiresfebbo/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
+</div>
