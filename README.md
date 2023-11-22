@@ -6,7 +6,7 @@
 * [Testes de Usabilidade](#testes-de-usabilidade)
 * [Protótipos](#protótipos)
 * [Implementações Futuras](#implementações-futuras)
-* [Desenvolvedoras](#desenvolvedoras)
+* [Desenvolvido](#desenvolvido)
 
 
 ## Descrição do Projeto
@@ -52,8 +52,7 @@ Estamos planejando adicionar várias funcionalidades ao My Trip para melhorar a 
 
 Continuaremos aprimorando-o com base no feedback dos usuários. Obrigado por acompanhar nosso projeto!
 
-## Desenvolvedoras
+## Desenvolvido por
 
 - [@thamiresfebbo](https://github.com/thamiresfebbo)
-- [@ariadnesantos](https://github.com/ariadnesantos)
-
+  <a href="https://www.linkedin.com/in/thamiresfebbo/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
